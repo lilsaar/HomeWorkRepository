@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../assets/Poppins-Regular.ttf");
+}
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+body {
+  display: initial;
+  justify-content: initial;
+  align-items: initial;
+  flex-direction: initial;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.header {
+  min-width: 638px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 120px;
+  background-color: transparent;
+}
+.header_left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 185px;
+  height: auto;
+  background-color: transparent;
+}
+.header_left b {
+  font-size: 40px;
+  color: whitesmoke;
+}
+.header_center {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 500px;
+  height: 23px;
+  background-color: transparent;
+}
+.header_right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+}
+.header_right a {
+  font-size: 20px;
+  text-decoration: none;
+  color: grey;
+}
+.header_right button {
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: transparent;
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 840px;
+  background-color: red;
+}
+.main_center_letters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 450px;
+  background-color: green;
+  padding: 100px;
+}
+.main_center_letters h2 {
+  font-size: 100px;
+  color: whitesmoke;
+}
+.main_center_letters h3 {
+  font-size: 100px;
+  background: linear-gradient(90deg, #FE6783 1.9%, #FFBF84 97.1%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 3000;
+}

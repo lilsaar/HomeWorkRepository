@@ -1,0 +1,314 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+    scroll-behavior: smooth;
+    user-select: none;
+}
+@font-face {
+    font-family: 'poppins';
+    src: url('../assets/Poppins-Regular.ttf');
+}
+$thing: red;
+$thing2: black;
+$thing3: grey;
+$thing4: whitesmoke;
+%main{
+    background-color: transparent;
+    width: 100%;
+    height: 80vh;
+}
+.img_left{
+    display: none;
+}
+.img_right{
+    display: none;
+}
+%flexbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+@mixin flex($f, $jc, $align, $row, $wdt, $hgt, $bg) {
+    display: $f;
+    justify-content: $jc;
+    align-items: $align;
+    flex-direction: $row;
+    width: $wdt;
+    height: $hgt;
+    background-color: $bg;
+}
+a{
+    color: $thing3;
+    text-decoration: none
+}
+body{
+    @include flex(initial,initial,initial,initial, 100%, 100%, black);
+}
+.header{
+    max-width: 100%;
+    @include flex(flex, space-around, center, row, 100%, 120px, transparent);
+    &_left{
+        @include flex(flex, space-between, center, row, 185px, auto, transparent);
+        b{
+            font-size:40px;
+            color: whitesmoke;
+        }
+    }
+    &_center{
+        font-size: 25px;
+        @include flex(flex, space-between, center, row, 500px, 23px, transparent);
+    }
+    &_right{
+        @include flex(flex, space-between, center, row, 200px, 50px,transparent);
+        a{
+            font-size: 20px;
+            text-decoration: none;
+            color: $thing3;
+        }
+        button{
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: transparent;
+            background-color: rgb(75, 133, 241);
+            color: whitesmoke;
+            font-weight: 700;
+        }
+    }
+}
+.main{
+    @include flex(flex, flex-start, center, column, 100%, 840px,transparent);
+    &_center_letters{
+        @include flex(flex, space-evenly,center,column,100%,450px, transparent);
+        padding: 100px;
+        h2{
+            font-size: 100px;
+            color: whitesmoke;
+            font-weight: 900;
+        }
+        h3{
+            font-size: 100px;
+            background: linear-gradient(90deg, #FE6783 1.9%, #FFBF84 97.1%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 3000;
+        }
+    }
+    &_footer{
+        p{
+            font-size: 35px;
+            text-align: center;
+            color: whitesmoke
+        }
+        @include flex(flex,space-around,center,column, 100%, 300px, transparent);
+        &_buttons{
+            @include flex(flex,space-between,center,row, 450px, 90px, transparent);
+            button{
+                padding: 20px 50px;
+            }
+        }
+    }
+    &_first_button{
+        border-radius: 10px;
+        border: 0px solid transparent;
+        color: whitesmoke;
+        background-color: rgb(67, 125, 231);
+    }
+    &_second_button{
+        border-radius: 10px;
+        border: 1px solid $thing3;
+        background-color: transparent;
+        color: $thing3;
+    }
+    span{
+        color: $thing3;
+        font-size: 20px;
+    }
+}
+.container{
+    @extend %main;
+    height: 480px;
+    &_logo{
+        @include flex(flex, center, center, row, 100%, 250px, transparent);
+        font-size: 50px;
+        color: $thing4;
+    }
+    &_inside { 
+        @include flex(flex, space-around, flex-start, row, 100%, 300px, transparent);
+        &_wrap{
+            @include flex(flex, space-around, center, column, 500px, 110px, transparent);
+            h3{
+                font-size: 35px;
+                color: $thing4;
+            }
+            p{
+                font-size: 20px;
+                color: $thing3;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1212px){
+    .header a{   
+        font-size: 20px;
+    }
+    .header b{
+        font-size: 24px;
+    }
+    .main_center_letters h2{
+        font-size: 55px;
+    }
+    .main_center_letters h3{
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 545px){
+    .header_right, .header_center{
+        display: none;
+    }
+    .img_left{
+        display: block;
+    }
+    .img_right{
+        display: block;   
+        width: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_left{
+        display: flex;  
+        width: 150px;
+    }
+    .header_left img{
+        width: 40px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    .main_center_letters{
+        width: 100%;
+        height: 200px;
+        margin-top: 40px;
+    }
+    .main_center_letters h2{
+        font-size: 33px;
+        text-align: center;
+        width: 400px !important;
+    }
+    .main_center_letters h3{
+        font-size: 28px;
+        text-align: center;
+        width: 400px !important;
+    }
+    .main_footer{
+        margin-top: 40px;
+    }
+    .main_footer p{
+        font-size: 23px;
+    }
+    .main_footer_buttons button{
+        padding: 15px 20px;
+        font-size: 10px;
+    }
+    .main_footer_buttons{
+        width: 320px;
+    }
+    .container{
+        height: 400px;
+        margin-top: -200px;
+    }
+    .container_logo{
+        height: 200px;
+        font-size: 20px;
+    }
+    .container_inside_wrap{
+        h3{
+            font-size: 17px;
+        }
+        p{
+            font-size: 10px;
+            text-align: center;
+        }
+    }
+}
+.connect_your_content{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+.connect_your_content h2{
+    color: whitesmoke;
+    font-size: 40px;
+}
+.connect_your_content p, button{
+    color: gray;
+}
+.connect_your_content span{
+    color: cornflowerblue;
+    font-size: 20px;
+    font-weight: 800;
+}
+.connect_your_content button{
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: transparent;
+}
+.third_main{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+        h2{
+            display: inline;
+            font-size: 45px;
+            color: white;
+    }
+    .hh{
+        color: cornflowerblue;
+    }
+    span{
+        color: white;
+        font-size: 15px;
+    }
+    p{
+        color: white;
+        font-size: 15px;
+    }
+}
+.left_div{
+    width: 470px;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.foot_buttons{
+    width: 300px;
+    button{
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: 0px;
+        background-color: cornflowerblue;
+        color: white;
+    }
+    .button2{
+        border: 1px solid grey;
+        background-color: transparent;
+        color: grey;
+    }
+}
